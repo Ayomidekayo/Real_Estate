@@ -6,6 +6,7 @@ import Profile from './pages/Profile'
 import About from './pages/About'
 import Header from './component/Header'
 import SignIn from './pages/SignIn'
+import PrivateRoute from './component/PrivateRoute'
 
 const App = () => {
   return (
@@ -15,7 +16,10 @@ const App = () => {
          <Route path='/' element={<Home/>} />
          <Route path='/sign-up' element={<SignUp/>} />
          <Route path='/sign-in' element={<SignIn/>} />
-         <Route path='/profile' element={<Profile/>} />
+         <Route element={<PrivateRoute/>}>
+             <Route path='/profile' element={<Profile/>} />
+         </Route>
+       
          <Route path='/about' element={<About/>} />
 
          
